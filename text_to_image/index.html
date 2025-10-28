@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>TEXT TO IMAGE</title>
+    </head>
+    <body>
+        <h1> Enter the text in the filed to create an image </h1>
+        <form action="/generate" method="POST">
+            <label for="txt"> Enter the text : </label><br>  
+            <input type="text" id="prompt" name="prompt" placeholder="Enter text"><br><br>
+
+            <button type="submit"> Generate </button>
+
+        </form>
+        
+        {% if image_filename %}
+            <hr>
+            <h2>Generated Image:</h2>
+            <img src="{{ image_filename }}" alt="Generated Image" style="max-width: 500px;">
+
+        {% endif %}
+    </body>
+</html>
